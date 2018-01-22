@@ -3,7 +3,9 @@
 IP_ADDR=`ip a s | grep inet`
 
 while :; do
-echo "HTTP/1.1 200 OK\n\n
+echo "HTTP/1.1 200 OK
+
+
 <!DOCTYPE html>
 <html><head>
 <style>
