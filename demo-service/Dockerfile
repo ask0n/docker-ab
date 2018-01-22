@@ -1,8 +1,7 @@
-FROM alpine
+FROM nginx:alpine
 
-ENV BUILD_VERSION=v0.1
-COPY /demo.sh /
-RUN apk --no-cache add netcat-openbsd
+ENV BUILD_VERSION=v0.2
 
-CMD ["/demo.sh"]
+COPY . /usr/share/nginx/html
+
 
