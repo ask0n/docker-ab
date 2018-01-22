@@ -1,9 +1,9 @@
 #!/bin/sh
-
+#set -x
 IP_ADDR=`ip a s | grep inet`
 
-echo "
-<!DOCTYPE html>
+while :; do
+echo "<!DOCTYPE html>
 <html><head>
 <style>
 body {
@@ -17,5 +17,5 @@ version: $BUILD_VERSION<br>
 <pre>
 <h1>$IP_ADDR</h1>
 <pre>
-</body></html>"
-
+</body></html>" | nc -l -q1 -p 8080;
+done
